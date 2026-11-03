@@ -14,7 +14,7 @@ def send_telegram_alert(message):
         "parse_mode": "Markdown"
     }
     try:
-        response = requests.post(url, json=payload)
+        response = requests.post(url, json=payload, timeout=10)
         return response.json()
     except Exception as e:
         print(f"خطأ في إرسال الرسالة إلى تليجرام: {e}")
